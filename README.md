@@ -1,1 +1,1 @@
-"# ChuckNorrisJoke" 
+A very simple site displaying a Chuck Norris joke at random.
