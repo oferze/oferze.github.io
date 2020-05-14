@@ -7,7 +7,7 @@
         <script>
             fetch('https://api.chucknorris.io/jokes/random')
             .then(response => response.json())
-            .then((data) => { document.getElementById('joke').innerHTML = data.value });
+            .then((data) => { document.getElementById('joke').innerHTML = data.value; document.getElementById('refresh').style.display = 'block'; });
         </script>
         <style type="text/css">
             body {
@@ -16,18 +16,26 @@
                 justify-content: center;
                 background: rgb(34,193,195);
                 background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             }
 
             #joke {
                 font-size: 3em;
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                
-                width: 80%;
                 text-align: center;
+            }
+
+            #refresh {
+                padding: 2em;
+                text-align: center;
+                color: maroon;
+                display: none;
             }
         </style>
     </head>
     <body>
-        <div id="joke"></div>
+        <div id="container">
+            <div id="joke"></div>
+            <div id="refresh">Refresh for more</div>
+        </div>
     </body>
 </html>
