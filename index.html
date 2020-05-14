@@ -1,5 +1,33 @@
-<html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <script>
+            fetch('https://api.chucknorris.io/jokes/random')
+            .then(response => response.json())
+            .then((data) => { document.getElementById('joke').innerHTML = data.value });
+        </script>
+        <style type="text/css">
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgb(34,193,195);
+                background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+            }
+
+            #joke {
+                font-size: 3em;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                
+                width: 80%;
+                text-align: center;
+            }
+        </style>
+    </head>
     <body>
-        Chuck Norris Joke
+        <div id="joke"></div>
     </body>
 </html>
